@@ -1,0 +1,30 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Counter
+    network: goerli
+    source:
+      address: "0x11B8C351300A8521ae357039A245C2aCDa9Bbb7D"
+      abi: Counter
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Decremented
+        - Incremented
+        - NumberSet
+      abis:
+        - name: Counter
+          file: ./abis/Counter.json
+      eventHandlers:
+        - event: Decremented(uint256,address)
+          handler: handleDecremented
+        - event: Incremented(uint256,address)
+          handler: handleIncremented
+        - event: NumberSet(uint256)
+          handler: handleNumberSet
+      file: ./src/counter.ts

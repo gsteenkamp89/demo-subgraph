@@ -1,0 +1,25 @@
+type Decremented @entity(immutable: true) {
+  id: Bytes!
+  decremented: BigInt! # uint256
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Incremented @entity(immutable: true) {
+  id: Bytes!
+  incremented: BigInt! # uint256
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NumberSet @entity(immutable: true) {
+  id: Bytes!
+  number: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

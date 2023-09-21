@@ -1,0 +1,8 @@
+{
+  "goerli": {
+    "Counter": {
+      "address": "0x11B8C351300A8521ae357039A245C2aCDa9Bbb7D",
+      "startBlock": 0
+    }
+  }
+}
