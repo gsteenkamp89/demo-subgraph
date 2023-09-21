@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: Counter
@@ -18,7 +18,7 @@ dataSources:
         - Change
       abis:
         - name: Counter
-          file: ./abis/Counter.json
+          file: Counter/abis/Counter.json
       eventHandlers:
         - event: Decremented(uint256,address)
           handler: handleDecremented
@@ -26,4 +26,4 @@ dataSources:
           handler: handleIncremented
         - event: NumberSet(uint256)
           handler: handleNumberSet
-      file: ./src/mappings/counter.ts
+      file: Counter/Counter.wasm
